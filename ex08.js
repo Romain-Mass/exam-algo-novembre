@@ -1,11 +1,14 @@
 function jouerTour(pointsDeVie, valeur, action) {
 	let res = action;
+	let pv = pointsDeVie;
 
-	if (action == attaquer) {
-		return res;
+	if (res === attaquer) {
+		pv = pv - attaquer();
 	} else {
-		return res;
+		pv = pv + soigner();
 	}
+
+	return pv;
 }
 
 function attaquer(pointsDeVie, valeur) {
